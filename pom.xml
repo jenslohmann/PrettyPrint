@@ -23,7 +23,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -31,7 +31,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -41,9 +41,9 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>com.oracle.substratevm</groupId>
+                <groupId>org.graalvm.nativeimage</groupId>
                 <artifactId>native-image-maven-plugin</artifactId>
-                <version>19.0.2</version>
+                <version>20.0.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -54,10 +54,9 @@
                 </executions>
                 <configuration>
                     <buildArgs>
-                        --no-server
                         -cp ${env.JAVA_HOME}/jre/lib/resources.jar
                         -H:ReflectionConfigurationFiles=classes/reflection_config.json
-                        -H:IncludeResourceBundles=com.sun.org.apache.xml.internal.serializer.utils.SerializerMessages
+                        -H:IncludeResourceBundles=com.sun.org.apache.xml.internal.serializer.utils.SerializerMessages,com.sun.org.apache.xerces.internal.impl.msg.XMLMessages
                         -H:IncludeResources=.*.properties
                     </buildArgs>
                     <imageName>pretty</imageName>
