@@ -10,7 +10,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
 
         <java.source.version>${java.version}</java.source.version>
         <java.target.version>${java.version}</java.target.version>
@@ -43,7 +43,7 @@
             <plugin>
                 <groupId>org.graalvm.nativeimage</groupId>
                 <artifactId>native-image-maven-plugin</artifactId>
-                <version>20.0.0</version>
+                <version>20.1.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -64,4 +64,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 </project>

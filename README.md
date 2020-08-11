@@ -9,4 +9,6 @@ Example usage:
 
 `$ cat bunchofxml.log|pretty`
 
-License: Apache 2.0: https://www.apache.org/licenses/LICENSE-2.0
+License: MIT
+
+PS: Remember to have run `${GRAALVM_HOME}/bin/gu install native-image`
